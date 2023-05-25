@@ -3,6 +3,12 @@
   src: url('fonts/ALBAS___.TTF') format('truetype');
 }
 
+body {
+  font-family: Helvetica, sans-serif;
+  background-color: #eaebeb;
+  margin: 0;
+}
+
 .container {
   display: grid;
   grid-template-rows: repeat(3, 1fr);
@@ -32,4 +38,40 @@
   min-width: 200px;
   align-self: center;
   padding-right: 45px;
+}
+
+.heading, .form, .submit {
+  padding: 20px 45px;
+}
+
+.heading {
+  display: grid;
+  align-content: end;
+}
+
+.heading p, .form p {
+  font-size: 1.5rem;
+
+}
+
+.form {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.form form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.form form div {
+  display: flex;
+  flex-direction: column;
+  padding-right: 50px;
+  padding-bottom: 20px;
+}
+
+label {
+  font-size: 0.75rem;
+  color: #555;
 }
