@@ -19,9 +19,9 @@
       <p>Here's a little blurb about joining the Woody Fan Club. It's a fan club, for my dog.</p>
       <p>Well, what're you <em>waiting</em> for?!</p>
     </div>
+    <form id="signup-form">
     <div class="form">
       <p>Let's do this!</p>
-      <form action="">
         <div>
           <label for="first_name">FIRST NAME</label>
           <input type="text" name="first_name" id="first_name">  
@@ -47,12 +47,29 @@
           <label for="confirm_pwd">CONFIRM PASSWORD</label>
           <input type="password" name="confirm_pwd" id="confirm_pwd" class="error">  
         </div>
-      </form>
     </div>
     <div class="submit">
-      <button type="button">Create Account</button>
+      <button type="submit" id="submit-button">Create Account</button>
       <p>Already have an account? <a href="">Log in</a></p>
     </div>
+    </form>
   </div>
+  <script>
+    const form = document.getElementById('signup-form');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      
+
+      submitForm();
+    });
+
+    function submitForm() {
+      const firstName = form.elements.first_name.value;
+
+      alert(`Welcome ${firstName}! You are now a member of the Woody Fan Club.`);
+    };
+  </script>
 </body>
 </html>

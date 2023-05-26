@@ -11,7 +11,7 @@ body {
 
 .container {
   display: grid;
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: 1fr 2fr;
   grid-template-columns: minmax(400px, 2fr) 3fr;
   height: 100vh;
 }
@@ -57,15 +57,17 @@ body {
 .form {
   background-color: rgba(255, 255, 255, 0.4);
   box-shadow: 0 4px 4px 0 rgba(150, 150, 150, 0.5);
-}
-
-.form form {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  padding: 0 45px;
 }
 
-.form form div {
+.form p {
+  grid-column: 1 / -1;
+}
+
+.form div {
   display: flex;
   flex-direction: column;
   padding-right: 50px;
