@@ -62,26 +62,25 @@
 
       const pwd1 = form.elements.user_password.value;
       const pwd2 = form.elements.confirm_pwd.value;
+      const firstName = form.elements.first_name.value;
+
+      const pwdField1 = document.getElementById('user_password');
+      const pwdField2 = document.getElementById('confirm_pwd');
+      const pwdErrorMsg = document.getElementById('pwd-error-msg');
 
       if (pwd1 === pwd2) {
-        submitForm();
+        pwdField1.classList.remove('error');
+        pwdField2.classList.remove('error');
+        pwdErrorMsg.innerHTML = '';
+        alert(`Welcome ${firstName}! You are now a member of the Woody Fan Club.`);
       } else {
-        const pwdField1 = document.getElementById('user_password');
-        const pwdField2 = document.getElementById('confirm_pwd');
         pwdField1.classList.add('error');
         pwdField2.classList.add('error');
-
-        const pwdErrorMsg = document.getElementById('pwd-error-msg');
         pwdErrorMsg.innerHTML = '* Passwords do not match';
       };
 
     });
 
-    function submitForm() {
-      const firstName = form.elements.first_name.value;
-
-      alert(`Welcome ${firstName}! You are now a member of the Woody Fan Club.`);
-    };
   </script>
 </body>
 </html>
