@@ -85,6 +85,25 @@ input {
   border: 1px solid lightgray;
 }
 
+input:focus-visible {
+  outline: none;
+}
+
+input:focus {
+  box-shadow: 3px 3px 3px 0 rgba(150, 150, 150, 0.5);
+  border-color: blue;
+}
+
+input[type="password"].error {
+  border-color: red;
+}
+
+p.pwd-error-msg {
+  color: red;
+  font-size: 10px;
+  margin: 0;
+}
+
 button {
   padding: 10px 30px;
   border-radius: 5px;
