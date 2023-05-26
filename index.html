@@ -20,8 +20,8 @@
       <p>Well, what're you <em>waiting</em> for?!</p>
     </div>
     <form id="signup-form">
-    <div class="form">
-      <p>Let's do this!</p>
+      <div class="form">
+        <p>Let's do this!</p>
         <div>
           <label for="first_name">FIRST NAME</label>
           <input type="text" name="first_name" id="first_name">  
@@ -40,14 +40,14 @@
         </div>
         <div>
           <label for="user_password">PASSWORD</label>
-          <input type="password" name="user_password" id="user_password" class="error">  
-          <p class="pwd-error-msg">* Passwords do not match</p>
+          <input type="password" name="user_password" id="user_password" class="pwd-input">  
+          <p id="pwd-error-msg"></p>
         </div>
         <div>
           <label for="confirm_pwd">CONFIRM PASSWORD</label>
-          <input type="password" name="confirm_pwd" id="confirm_pwd" class="error">  
+          <input type="password" name="confirm_pwd" id="confirm_pwd" class="pwd-input">  
         </div>
-    </div>
+      </div>
     <div class="submit">
       <button type="submit" id="submit-button">Create Account</button>
       <p>Already have an account? <a href="">Log in</a></p>
@@ -60,9 +60,21 @@
     form.addEventListener('submit', function(event) {
       event.preventDefault();
 
-      
+      const pwd1 = form.elements.user_password.value;
+      const pwd2 = form.elements.confirm_pwd.value;
 
-      submitForm();
+      if (pwd1 === pwd2) {
+        submitForm();
+      } else {
+        const pwdField1 = document.getElementById('user_password');
+        const pwdField2 = document.getElementById('confirm_pwd');
+        pwdField1.classList.add('error');
+        pwdField2.classList.add('error');
+
+        const pwdErrorMsg = document.getElementById('pwd-error-msg');
+        pwdErrorMsg.innerHTML = '* Passwords do not match';
+      };
+
     });
 
     function submitForm() {

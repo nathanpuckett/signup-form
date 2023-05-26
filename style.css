@@ -100,7 +100,7 @@ input[type="password"].error {
   border-color: red;
 }
 
-p.pwd-error-msg {
+p#pwd-error-msg {
   color: red;
   font-size: 10px;
   margin: 0;
