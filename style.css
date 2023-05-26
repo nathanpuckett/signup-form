@@ -56,6 +56,7 @@ body {
 
 .form {
   background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 4px 0 rgba(150, 150, 150, 0.5);
 }
 
 .form form {
@@ -74,4 +75,28 @@ body {
 label {
   font-size: 0.75rem;
   color: #555;
+  letter-spacing: 1px;
+  padding-bottom: 3px;
+}
+
+input {
+  border-radius: 5px;
+  height: 1.5rem;
+  border: 1px solid lightgray;
+}
+
+button {
+  padding: 10px 30px;
+  border-radius: 5px;
+  border: none;
+  background-color: green;
+  color: white;
+  box-shadow: 2px 2px 2px 0 rgba(150, 150, 150, 0.5);
+  cursor: pointer;
+}
+
+.submit a {
+  text-decoration: none;
+  cursor: pointer;
+  color: green;
 }
